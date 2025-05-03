@@ -1,0 +1,484 @@
+:root {
+  --primary-blue: #2980b9;
+  --primary-orange: #e67e22;
+  --bg-light: #ecf0f1; /* Clouds */
+  --bg-white: #ffffff;
+  --text-dark: #2c3e50; /* Midnight Blue */
+  --text-light: #ffffff;
+  --text-medium: #7f8c8d; /* Asbestos */
+  --border-color: #bdc3c7; /* Silver */
+  --shadow-color: rgba(44, 62, 80, 0.15);
+  --shadow-color-darker: rgba(44, 62, 80, 0.25);
+  --success-color: #2ecc71; /* Emerald */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevent scrollbars on main body for desktop */
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* --- App Container (Takes Full Screen) --- */
+.App {
+  width: 100%;
+  height: 100%;
+  display: flex; /* Use flex to manage views */
+  flex-direction: column; /* Stack views vertically */
+}
+
+/* --- Loading View --- */
+.loading-view {
+  display: flex;
+  flex-direction: column; /* Stack text and button */
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.5em;
+  color: var(--text-medium);
+  background-color: var(--bg-light); /* Consistent background */
+}
+.loading-view button { /* Style restart button if shown */
+    margin-top: 20px;
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* --- City Selection View (Marquee Version) --- */
+.city-selection-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Updated Background: Blue/Orange Gradient */
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+  color: var(--text-light);
+  overflow: hidden; /* Hide overflow for marquees */
+  position: relative; /* For potential absolute elements if needed */
+}
+
+.header-content {
+    padding: 30px 20px 10px; /* Reduced bottom padding */
+    text-align: center;
+    position: relative; /* Keep header above marquees */
+    z-index: 2;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0)); /* Subtle fade at top */
+}
+
+.city-selection-title {
+  font-size: 3em;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 5px;
+  color: var(--bg-white);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.city-selection-subtitle {
+  font-size: 1.1em;
+  text-align: center;
+  margin-bottom: 15px; /* Reduced margin */
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.marquees-container {
+    flex-grow: 1; /* Take remaining vertical space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribute rows vertically */
+    padding: 10px 0; /* Add some vertical padding */
+    overflow: hidden; /* Clip content */
+}
+
+.marquee-row {
+    width: 100%;
+    overflow: hidden; /* Crucial for marquee effect */
+    padding: 10px 0; /* Space between rows */
+    position: relative; /* Needed for absolute positioning if required later */
+}
+
+.marquee-row:hover .marquee-content {
+    animation-play-state: paused; /* Pause scroll on hover */
+}
+
+.marquee-content {
+    display: flex;
+    width: max-content; /* Allow content to determine width */
+    /* Animation will be applied via classes below */
+    will-change: transform; /* Optimize animation */
+}
+
+/* Keyframes for scrolling */
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Moves exactly one set of items */
+}
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); } /* Start halfway */
+  100% { transform: translateX(0); } /* End at the beginning */
+}
+
+/* Apply animations */
+.scroll-left .marquee-content {
+    animation: scrollLeft var(--scroll-duration, 60s) linear infinite;
+}
+.scroll-right .marquee-content {
+    animation: scrollRight var(--scroll-duration, 60s) linear infinite;
+}
+
+
+.city-tile {
+  flex-shrink: 0; /* Prevent tiles from shrinking */
+  width: 280px; /* Fixed width for tiles */
+  aspect-ratio: 16 / 10;
+  margin: 0 15px; /* Spacing between tiles */
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.city-tile:hover {
+  transform: scale(1.05); /* Slightly larger hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  z-index: 5; /* Bring hovered tile slightly forward */
+}
+
+.city-tile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)); /* Darker at bottom */
+  transition: background-color 0.3s ease;
+}
+.city-tile:hover .city-tile-overlay {
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.4)); /* Less overlay on hover */
+}
+
+.city-tile-name {
+  position: relative;
+  z-index: 1;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--text-light);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 10px;
+}
+
+
+/* --- Game View (Split Screen) --- */
+.game-view-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative; /* For absolute positioning quit button */
+}
+
+.choice-panel {
+  flex: 1; /* Each panel takes half the width */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center card vertically */
+  align-items: center; /* Center card horizontally */
+  padding: 40px;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+  overflow-y: auto; /* Allow scrolling if card content is tall */
+}
+
+.choice-panel:hover {
+ filter: brightness(1.1);
+}
+
+.panel-blue { background-color: var(--primary-blue); }
+.panel-orange { background-color: var(--primary-orange); }
+
+.panel-content {
+    width: 100%;
+    max-width: 450px; /* Max width of the card area */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Place Card Styling within Panels */
+.place-card {
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px var(--shadow-color-darker);
+  width: 100%; /* Take width of panel content */
+  margin-bottom: 25px; /* Space before button */
+  overflow: hidden;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease; /* For fade effect */
+  transform: scale(1); /* Base scale for transition */
+  opacity: 1;
+}
+/* Add a class for animating out/in if desired */
+/* .place-card.exiting { opacity: 0; transform: scale(0.95); } */
+
+.place-card.is-loading {
+    min-height: 400px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly visible on colored bg */
+    box-shadow: none;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  background-color: var(--bg-light); /* Placeholder bg color */
+}
+
+.card-content {
+  padding: 20px 25px;
+}
+
+.card-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.6em;
+  color: var(--text-dark);
+  text-align: center; /* Center title within card */
+}
+
+.card-type, .card-rating-hint {
+  font-size: 0.9em;
+  color: var(--text-medium);
+  text-align: center;
+  margin-bottom: 10px;
+}
+.card-rating-hint strong { color: var(--text-medium); }
+
+.card-description {
+  font-size: 1em;
+  margin-bottom: 0; /* Removed extra margin */
+  text-align: center;
+  font-style: italic;
+}
+
+.panel-choose-button {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    color: inherit; /* Inherit panel color */
+    border: 2px solid var(--text-light);
+    padding: 12px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 30px; /* Pill shape */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+    margin-top: 10px; /* Add some space */
+    cursor: pointer; /* Ensure cursor indicates clickability */
+}
+.panel-blue .panel-choose-button { color: var(--primary-blue); }
+.panel-orange .panel-choose-button { color: var(--primary-orange); }
+
+.panel-choose-button:hover {
+    background-color: var(--text-light);
+    transform: scale(1.05);
+}
+
+.quit-game-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(44, 62, 80, 0.7); /* Semi-transparent dark */
+    color: var(--text-light);
+    padding: 8px 15px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    z-index: 10;
+    transition: background-color 0.2s ease;
+    border: none; /* Remove default button border */
+    cursor: pointer;
+}
+.quit-game-button:hover {
+    background-color: var(--text-dark);
+}
+
+
+/* --- Result View --- */
+.result-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: var(--bg-light);
+  overflow-y: auto;
+}
+
+.result-content {
+  background-color: var(--bg-white);
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px var(--shadow-color);
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+}
+
+.result-content h1 {
+    color: var(--success-color); /* Emerald green */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+.result-content > p { /* Target only direct children p tags */
+    color: var(--text-medium);
+    margin-bottom: 15px;
+}
+
+.final-place-card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin: 30px auto;
+  overflow: hidden;
+  background-color: var(--bg-white); /* Ensure bg */
+}
+
+.final-card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background-color: var(--bg-light); /* Placeholder bg */
+}
+
+.final-place-card h2 {
+    color: var(--primary-blue); /* Or orange, or dark text */
+    font-size: 1.8em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.final-place-card p {
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    padding: 0 20px;
+    line-height: 1.5; /* Slightly improve readability */
+}
+.final-place-card p:last-of-type {
+    margin-bottom: 20px;
+}
+
+.final-message {
+    font-weight: bold;
+    margin-top: 25px;
+    color: var(--text-dark);
+    font-size: 1.1em;
+}
+.final-message small {
+    display: block;
+    font-weight: normal;
+    font-size: 0.9em;
+    color: var(--text-medium);
+    margin-top: 8px;
+}
+
+.result-button { /* Targets 'Choose Another City?' */
+  background-color: var(--primary-blue); /* Or orange */
+  color: var(--text-light);
+  padding: 15px 35px;
+  font-size: 1.1em;
+  margin-top: 30px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+.result-button:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+   html, body, #root { overflow: auto; } /* Allow scroll on mobile */
+
+   .city-selection-title { font-size: 2.2em; }
+   .city-selection-subtitle { font-size: 1em; margin-bottom: 10px;}
+   .header-content { padding: 20px 15px 5px; }
+   .marquees-container { padding: 5px 0; }
+   .marquee-row { padding: 5px 0; }
+   .city-tile { width: 220px; margin: 0 10px; } /* Smaller tiles on mobile */
+   .city-tile-name { font-size: 1.5em; }
+
+   .game-view-container {
+     flex-direction: column; /* Stack panels vertically */
+     height: auto; /* Allow content to determine height */
+     min-height: 100%; /* Ensure it still tries to fill screen */
+   }
+   .choice-panel {
+     flex: none; /* Remove flex grow */
+     width: 100%;
+     height: auto; /* Fit content */
+     min-height: 50vh; /* Each takes at least half screen */
+     padding: 30px 15px; /* Adjust padding */
+     overflow-y: visible; /* Allow content to overflow if needed */
+   }
+   .panel-content { max-width: 90%; } /* Allow slightly wider cards on mobile */
+   .place-card { margin-bottom: 20px; }
+   .panel-choose-button { margin-top: 0; } /* Reset margin if needed */
+
+   .card-image { height: 180px; } /* Smaller images on mobile */
+   .card-title { font-size: 1.4em; }
+
+   .result-view { padding: 20px; }
+   .result-content { padding: 30px 20px; }
+   .result-content h1 { font-size: 2em; }
+   .final-card-image { height: 200px; }
+
+   .quit-game-button { top: 10px; left: 10px; padding: 6px 12px; }
+}
+
+@media (max-width: 480px) {
+    .city-selection-title { font-size: 1.8em; }
+    .city-tile { width: 180px; margin: 0 8px; }
+    .city-tile-name { font-size: 1.2em; }
+
+    .card-image { height: 150px; }
+    .card-title { font-size: 1.2em; }
+    .card-description { font-size: 0.9em; }
+    .panel-choose-button { font-size: 1em; padding: 10px 25px; }
+
+    .result-content { padding: 25px 15px; }
+    .result-content h1 { font-size: 1.8em; }
+    .final-place-card h2 { font-size: 1.5em; }
+    .result-button { padding: 12px 30px; font-size: 1em;}
+
+}
