@@ -2,7 +2,7 @@ export const placesByCity = {
     // --- EUROPE ---
     "London": {
       continent: "Europe",
-      image_url: "/images/cities/london.jpg",
+      image_url: "/images/cities/London.png",
       places: [
         { id: 101, name: "The Greasy Chip Hostel", type: "Hotel", description: "Offers authentic 'aroma experience' & questionable bedding.", rating_hint: "★★☆☆☆ (Generous)", image_url: "/images/london/hotel1.jpg" },
         { id: 102, name: "Tube Rat Tours", type: "Activity", description: "Follow your guide (a large rodent) through less-travelled tunnels.", rating_hint: "Critter Approved", image_url: "/images/london/activity1.jpg" },
@@ -13,18 +13,18 @@ export const placesByCity = {
     },
     "Barcelona": {
         continent: "Europe",
-        image_url: "/images/cities/barcelona.jpg",
+        image_url: "/images/cities/Barcelona.png",
         places: [
-          { id: 101, name: "The Greasy Chip Hostel", type: "Hotel", description: "Offers authentic 'aroma experience' & questionable bedding.", rating_hint: "★★☆☆☆ (Generous)", image_url: "/images/london/hotel1.jpg" },
-          { id: 102, name: "Tube Rat Tours", type: "Activity", description: "Follow your guide (a large rodent) through less-travelled tunnels.", rating_hint: "Critter Approved", image_url: "/images/london/activity1.jpg" },
-          { id: 103, name: "Permanently Foggy Pub", type: "Bar", description: "Is it fog? Is it vape smoke? Is it despair? Yes.", rating_hint: "Atmospheric", image_url: "/images/london/bar1.jpg" },
-          { id: 104, name: "Wobbly Bridge Bistro", type: "Restaurant", description: "Enjoy dinner with a constant, unsettling sway.", rating_hint: "Vertigo Special", image_url: "/images/london/restaurant1.jpg" },
+          { id: 201, name: "The Greasy Chip Hostel", type: "Hotel", description: "Offers authentic 'aroma experience' & questionable bedding.", rating_hint: "★★☆☆☆ (Generous)", image_url: "/images/london/hotel1.jpg" },
+          { id: 202, name: "Tube Rat Tours", type: "Activity", description: "Follow your guide (a large rodent) through less-travelled tunnels.", rating_hint: "Critter Approved", image_url: "/images/london/activity1.jpg" },
+          { id: 203, name: "Permanently Foggy Pub", type: "Bar", description: "Is it fog? Is it vape smoke? Is it despair? Yes.", rating_hint: "Atmospheric", image_url: "/images/london/bar1.jpg" },
+          { id: 204, name: "Wobbly Bridge Bistro", type: "Restaurant", description: "Enjoy dinner with a constant, unsettling sway.", rating_hint: "Vertigo Special", image_url: "/images/london/restaurant1.jpg" },
           // !! ADD MORE LONDON PLACES (aim for 10-20 total) !!
         ]
       },
       "Madrid": {
         continent: "Europe",
-        image_url: "/images/cities/madrid.jpg",
+        image_url: "/images/cities/Madrid.png",
         places: [
           { id: 101, name: "The Greasy Chip Hostel", type: "Hotel", description: "Offers authentic 'aroma experience' & questionable bedding.", rating_hint: "★★☆☆☆ (Generous)", image_url: "/images/london/hotel1.jpg" },
           { id: 102, name: "Tube Rat Tours", type: "Activity", description: "Follow your guide (a large rodent) through less-travelled tunnels.", rating_hint: "Critter Approved", image_url: "/images/london/activity1.jpg" },
@@ -35,7 +35,7 @@ export const placesByCity = {
       },
     "Palma": {
         continent: "Europe",
-        image_url: "/images/cities/palma.jpg",
+        image_url: "/images/cities/Palma.png",
         places: [
           { id: 101, name: "The Greasy Chip Hostel", type: "Hotel", description: "Offers authentic 'aroma experience' & questionable bedding.", rating_hint: "★★☆☆☆ (Generous)", image_url: "/images/london/hotel1.jpg" },
           { id: 102, name: "Tube Rat Tours", type: "Activity", description: "Follow your guide (a large rodent) through less-travelled tunnels.", rating_hint: "Critter Approved", image_url: "/images/london/activity1.jpg" },
@@ -46,7 +46,7 @@ export const placesByCity = {
       },
     "Roma": {
         continent: "Europe",
-        image_url: "/images/cities/roma.jpg",
+        image_url: "/images/cities/Roma.png",
         places: [
           { id: 101, name: "The Greasy Chip Hostel", type: "Hotel", description: "Offers authentic 'aroma experience' & questionable bedding.", rating_hint: "★★☆☆☆ (Generous)", image_url: "/images/london/hotel1.jpg" },
           { id: 102, name: "Tube Rat Tours", type: "Activity", description: "Follow your guide (a large rodent) through less-travelled tunnels.", rating_hint: "Critter Approved", image_url: "/images/london/activity1.jpg" },
@@ -57,7 +57,7 @@ export const placesByCity = {
       },
     "Venice": {
         continent: "Europe",
-        image_url: "/images/cities/venice.jpg",
+        image_url: "/images/cities/Venice.png",
         places: [
           { id: 101, name: "The Greasy Chip Hostel", type: "Hotel", description: "Offers authentic 'aroma experience' & questionable bedding.", rating_hint: "★★☆☆☆ (Generous)", image_url: "/images/london/hotel1.jpg" },
           { id: 102, name: "Tube Rat Tours", type: "Activity", description: "Follow your guide (a large rodent) through less-travelled tunnels.", rating_hint: "Critter Approved", image_url: "/images/london/activity1.jpg" },
@@ -68,7 +68,7 @@ export const placesByCity = {
       },
     "Amsterdam": {
         continent: "Europe",
-        image_url: "/images/cities/amsterdam.jpg",
+        image_url: "/images/cities/Amsterdam.png",
         places: [
           { id: 101, name: "The Greasy Chip Hostel", type: "Hotel", description: "Offers authentic 'aroma experience' & questionable bedding.", rating_hint: "★★☆☆☆ (Generous)", image_url: "/images/paris/Cafe_le_dome.jpg" },
           { id: 102, name: "Tube Rat Tours", type: "Activity", description: "Follow your guide (a large rodent) through less-travelled tunnels.", rating_hint: "Critter Approved", image_url: "/images/london/activity1.jpg" },
@@ -101,7 +101,7 @@ export const placesByCity = {
     },
     "Sofia": {
         continent: "Europe",
-        image_url: "/images/cities/sofia.jpg",
+        image_url: "/images/cities/Sofia.png",
         places: [
           { id: 101, name: "The Greasy Chip Hostel", type: "Hotel", description: "Offers authentic 'aroma experience' & questionable bedding.", rating_hint: "★★☆☆☆ (Generous)", image_url: "/images/london/hotel1.jpg" },
           { id: 102, name: "Tube Rat Tours", type: "Activity", description: "Follow your guide (a large rodent) through less-travelled tunnels.", rating_hint: "Critter Approved", image_url: "/images/london/activity1.jpg" },
@@ -112,7 +112,7 @@ export const placesByCity = {
       },
      "Berlin": {
       continent: "Europe",
-      image_url: "/images/cities/berlin.jpg",
+      image_url: "/images/cities/Berlin.png",
       places: [
         { id: 301, name: "All-Night Späti Stay", type: "Hotel", description: "Your bed is a mattress behind the beer fridge.", rating_hint: "Convenient Location", image_url: "/images/berlin/hotel1.jpg" },
         { id: 302, name: "Abandoned Power Plant Rave", type: "Activity", description: "Techno beats and tetanus shots. Mind the holes.", rating_hint: "Electrifyingly Dangerous", image_url: "/images/berlin/activity1.jpg" },
@@ -124,7 +124,7 @@ export const placesByCity = {
      // --- NORTH AMERICA ---
      "New York": {
        continent: "North America",
-       image_url: "/images/cities/newyork.jpg",
+       image_url: "/images/cities/newyork.png",
        places: [
          { id: 401, name: "Times Square Tourist Trap Hotel", type: "Hotel", description: "Pay $500/night to hear sirens, honking, and Elmo arguing 24/7.", rating_hint: "Vibrant Atmosphere", image_url: "/images/newyork/hotel1.jpg" },
          { id: 402, name: "Hot Dog Cart Connoisseur Tour", type: "Activity", description: "Sample questionable street meat from carts with 'A' ratings.", rating_hint: "Gastrointestinally Adventurous", image_url: "/images/newyork/activity1.jpg" },
@@ -135,7 +135,7 @@ export const placesByCity = {
      },
      "Los Angeles": {
         continent: "North America",
-        image_url: "/images/cities/losangeles.jpg",
+        image_url: "/images/cities/losangeles.png",
         places: [
           { id: 401, name: "Times Square Tourist Trap Hotel", type: "Hotel", description: "Pay $500/night to hear sirens, honking, and Elmo arguing 24/7.", rating_hint: "Vibrant Atmosphere", image_url: "/images/newyork/hotel1.jpg" },
           { id: 402, name: "Hot Dog Cart Connoisseur Tour", type: "Activity", description: "Sample questionable street meat from carts with 'A' ratings.", rating_hint: "Gastrointestinally Adventurous", image_url: "/images/newyork/activity1.jpg" },
@@ -146,7 +146,7 @@ export const placesByCity = {
       },
       "Detroit": {
         continent: "North America",
-        image_url: "/images/cities/detroit.jpg",
+        image_url: "/images/cities/Detroit.png",
         places: [
           { id: 401, name: "Times Square Tourist Trap Hotel", type: "Hotel", description: "Pay $500/night to hear sirens, honking, and Elmo arguing 24/7.", rating_hint: "Vibrant Atmosphere", image_url: "/images/newyork/hotel1.jpg" },
           { id: 402, name: "Hot Dog Cart Connoisseur Tour", type: "Activity", description: "Sample questionable street meat from carts with 'A' ratings.", rating_hint: "Gastrointestinally Adventurous", image_url: "/images/newyork/activity1.jpg" },
@@ -157,7 +157,7 @@ export const placesByCity = {
       },
       "Ottawa": {
         continent: "North America",
-        image_url: "/images/cities/ottawa.jpg",
+        image_url: "/images/cities/Ottawa.png",
         places: [
           { id: 401, name: "Times Square Tourist Trap Hotel", type: "Hotel", description: "Pay $500/night to hear sirens, honking, and Elmo arguing 24/7.", rating_hint: "Vibrant Atmosphere", image_url: "/images/newyork/hotel1.jpg" },
           { id: 402, name: "Hot Dog Cart Connoisseur Tour", type: "Activity", description: "Sample questionable street meat from carts with 'A' ratings.", rating_hint: "Gastrointestinally Adventurous", image_url: "/images/newyork/activity1.jpg" },
@@ -168,7 +168,7 @@ export const placesByCity = {
       },
       "Vancouver": {
         continent: "North America",
-        image_url: "/images/cities/vancouver.jpg",
+        image_url: "/images/cities/Vancouver.png",
         places: [
           { id: 401, name: "Times Square Tourist Trap Hotel", type: "Hotel", description: "Pay $500/night to hear sirens, honking, and Elmo arguing 24/7.", rating_hint: "Vibrant Atmosphere", image_url: "/images/newyork/hotel1.jpg" },
           { id: 402, name: "Hot Dog Cart Connoisseur Tour", type: "Activity", description: "Sample questionable street meat from carts with 'A' ratings.", rating_hint: "Gastrointestinally Adventurous", image_url: "/images/newyork/activity1.jpg" },
@@ -179,7 +179,7 @@ export const placesByCity = {
       },
       "Miami": {
         continent: "North America",
-        image_url: "/images/cities/miami.jpg",
+        image_url: "/images/cities/Miami.png",
         places: [
           { id: 401, name: "Times Square Tourist Trap Hotel", type: "Hotel", description: "Pay $500/night to hear sirens, honking, and Elmo arguing 24/7.", rating_hint: "Vibrant Atmosphere", image_url: "/images/newyork/hotel1.jpg" },
           { id: 402, name: "Hot Dog Cart Connoisseur Tour", type: "Activity", description: "Sample questionable street meat from carts with 'A' ratings.", rating_hint: "Gastrointestinally Adventurous", image_url: "/images/newyork/activity1.jpg" },
@@ -191,7 +191,7 @@ export const placesByCity = {
      // --- ASIA ---
      "Tokyo": {
          continent: "Asia",
-         image_url: "/images/cities/tokyo.jpg",
+         image_url: "/images/cities/tokyo.png",
          places: [
               { id: 501, name: "Capsule Hotel 'Sardine Can'", type: "Hotel", description: "Claustrophobia included free of charge.", rating_hint: "Cozy", image_url: "/images/tokyo/hotel1.jpg" },
               { id: 502, name: "Robot Restaurant Overload", type: "Activity", description: "Sensory assault featuring lasers, robots, and confusion.", rating_hint: "May Cause Seizures", image_url: "/images/tokyo/activity1.jpg" },
@@ -201,7 +201,7 @@ export const placesByCity = {
      },
      "Seoul": {
         continent: "Asia",
-        image_url: "/images/cities/seoul.jpg",
+        image_url: "/images/cities/Seoul.png",
         places: [
              { id: 501, name: "Capsule Hotel 'Sardine Can'", type: "Hotel", description: "Claustrophobia included free of charge.", rating_hint: "Cozy", image_url: "/images/tokyo/hotel1.jpg" },
              { id: 502, name: "Robot Restaurant Overload", type: "Activity", description: "Sensory assault featuring lasers, robots, and confusion.", rating_hint: "May Cause Seizures", image_url: "/images/tokyo/activity1.jpg" },
@@ -211,7 +211,7 @@ export const placesByCity = {
     },
     "Shenzhen": {
         continent: "Asia",
-        image_url: "/images/cities/shenzhen.jpg",
+        image_url: "/images/cities/Shenzhen.png",
         places: [
              { id: 501, name: "Capsule Hotel 'Sardine Can'", type: "Hotel", description: "Claustrophobia included free of charge.", rating_hint: "Cozy", image_url: "/images/tokyo/hotel1.jpg" },
              { id: 502, name: "Robot Restaurant Overload", type: "Activity", description: "Sensory assault featuring lasers, robots, and confusion.", rating_hint: "May Cause Seizures", image_url: "/images/tokyo/activity1.jpg" },
@@ -221,7 +221,7 @@ export const placesByCity = {
     },
     "Hong Kong": {
         continent: "Asia",
-        image_url: "/images/cities/hongkong.jpg",
+        image_url: "/images/cities/Hongkong.png",
         places: [
              { id: 501, name: "Capsule Hotel 'Sardine Can'", type: "Hotel", description: "Claustrophobia included free of charge.", rating_hint: "Cozy", image_url: "/images/tokyo/hotel1.jpg" },
              { id: 502, name: "Robot Restaurant Overload", type: "Activity", description: "Sensory assault featuring lasers, robots, and confusion.", rating_hint: "May Cause Seizures", image_url: "/images/tokyo/activity1.jpg" },
@@ -231,7 +231,7 @@ export const placesByCity = {
     },
     "Busan": {
         continent: "Asia",
-        image_url: "/images/cities/busan.jpg",
+        image_url: "/images/cities/Busan.png",
         places: [
              { id: 501, name: "Capsule Hotel 'Sardine Can'", type: "Hotel", description: "Claustrophobia included free of charge.", rating_hint: "Cozy", image_url: "/images/tokyo/hotel1.jpg" },
              { id: 502, name: "Robot Restaurant Overload", type: "Activity", description: "Sensory assault featuring lasers, robots, and confusion.", rating_hint: "May Cause Seizures", image_url: "/images/tokyo/activity1.jpg" },
@@ -241,7 +241,7 @@ export const placesByCity = {
     },
     "Shanghai": {
         continent: "Asia",
-        image_url: "/images/cities/Shanghai.jpg",
+        image_url: "/images/cities/Shanghai.png",
         places: [
              { id: 501, name: "Capsule Hotel 'Sardine Can'", type: "Hotel", description: "Claustrophobia included free of charge.", rating_hint: "Cozy", image_url: "/images/tokyo/hotel1.jpg" },
              { id: 502, name: "Robot Restaurant Overload", type: "Activity", description: "Sensory assault featuring lasers, robots, and confusion.", rating_hint: "May Cause Seizures", image_url: "/images/tokyo/activity1.jpg" },
