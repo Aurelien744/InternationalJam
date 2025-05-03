@@ -28,8 +28,8 @@ function ResultScreen({ finalPlace, onRestart }) {
           <p><strong>Rating Hint:</strong> {finalPlace.rating_hint}</p>
         </div>
         <p className="final-message">
-          Bon voyage... and good luck. We're definitely not liable.*<br/>
-          <small>(*Seriously, sign this waiver.)</small>
+          Bon voyage... and good luck. We're definitely not liable.<br/>
+          <small>(Seriously, sign this waiver.)</small>
         </p>
         <button onClick={onRestart} className="restart-button result-button">Choose Another City?</button>
       </div>
