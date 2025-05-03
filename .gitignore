@@ -1,0 +1,7 @@
+functions/.env
+
+# Firebase Emulator Data
+.firebase/emulators/
+*.log
+firebase-debug.log*
+*.snapshot
